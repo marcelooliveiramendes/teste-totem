@@ -23,7 +23,7 @@ const App = () => {
 
       timeoutId = setTimeout(() => {
         setIsActive(true);
-      }, 15 .000); // 5000 milliseconds = 5 seconds
+      }, 15000); // 5000 milliseconds = 5 seconds
     };
 
     const handleUserActivity = () => {
