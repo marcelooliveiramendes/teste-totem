@@ -4,10 +4,15 @@ import './home.scss'
 import feedback from '../../img/feedback.png'
 import solicitacao from '../../img/solicitacao.png'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 export const Home = () => {
   return (
-    <div className='homeContainer'>
+    <motion.div className='homeContainer' 
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}
+    >
         <Title title="Solicitações e Reclamações/Denúncias" />
         <div class='row'>
             <Link to='/login'>
@@ -25,6 +30,6 @@ export const Home = () => {
             </Link>
         </div>
 
-    </div>
+    </motion.div>
   )
 }

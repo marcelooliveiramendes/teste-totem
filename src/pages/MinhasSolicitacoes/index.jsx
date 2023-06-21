@@ -2,10 +2,14 @@ import React from 'react'
 import './minhasSolicitacoes.scss'
 import { Title } from '../../components/Title'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 export const MinhasSolicitacoes = () => {
   return (
-    <div className='solicitacoesContainer'>
+    <motion.div className='solicitacoesContainer'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
         <div className='voltarBox'>
             <Link to="/categoriasHome">
                 <button className='voltarBtn'>Voltar</button>
@@ -24,6 +28,6 @@ export const MinhasSolicitacoes = () => {
             </div>
         </div>
        
-    </div>
+    </motion.div>
   )
 }

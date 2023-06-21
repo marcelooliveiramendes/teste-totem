@@ -2,6 +2,7 @@ import React from 'react'
 import './setor.scss'
 import { Link, useParams } from "react-router-dom";
 import { Title } from '../../components/Title';
+import {motion} from 'framer-motion'
 
 export const Setor = () => {
     let parametros = useParams();
@@ -41,7 +42,10 @@ export const Setor = () => {
     }
 
   return (
-    <div className='setorContainer'>
+    <motion.div className='setorContainer' 
+    initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
         <div className='voltarBox'>
             <Link to="/categoriasHome">
                 <button className='voltarBtn'>Voltar</button>
@@ -61,6 +65,6 @@ export const Setor = () => {
                 <button className='salvarBtn'>Salvar</button>
             </Link>
         </div>
-    </div>
+    </motion.div>
   )
 }

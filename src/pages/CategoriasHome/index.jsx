@@ -4,10 +4,14 @@ import { Title } from '../../components/Title'
 import start from '../../img/start.png'
 import search from '../../img/search.png'
 import { Link } from 'react-router-dom'
+import {motion} from 'framer-motion'
 
 export const CategoriasHome = () => {
   return (
-    <div className='catHomeContainer'>
+    <motion.div className='catHomeContainer'
+            initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
         <div className='voltarBox'>
             <Link to="/categoriasHome">
                 <button className='voltarBtn'>Voltar</button>
@@ -31,6 +35,6 @@ export const CategoriasHome = () => {
             
         </div>
         <Link to="/"><button>Sair</button></Link>
-    </div>
+    </motion.div>
   )
 }

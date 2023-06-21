@@ -11,10 +11,14 @@ import farmacia from '../../img/farmacia.png'
 import bus from '../../img/bus.png'
 import refeicao from '../../img/fork.png'
 import surprise from '../../img/surprise.png'
+import {motion} from 'framer-motion'
 
 const Categorias = () => {
   return (
-    <div className='categoriasContainer'>
+    <motion.div className='categoriasContainer'
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}>
         <div className='voltarBox'>
             <Link to="/categoriasHome">
                 <button className='voltarBtn'>Voltar</button>
@@ -77,7 +81,7 @@ const Categorias = () => {
                 </div>
             </Link>
         </div>
-    </div>
+    </motion.div>
   )
 }
 
