@@ -1,0 +1,73 @@
+.setorContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .voltarBox{
+        width: 80%;
+        display: flex;
+        position: absolute;
+        top: 100px;
+
+        .voltarBtn{
+            width: 120px;
+            height: 60px;
+            background: transparent;
+            border: none;
+            font-size: 22px;
+        }
+    }
+    
+    .inputBox{
+        width: 800px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        p{
+            font-size: 24px;
+        }
+        textarea{
+            width: 600px;
+            height: 200px;
+            border-radius: 7px;
+            border: 1px solid #d4d4d4;
+        }
+    }
+
+    .btnArea{
+        width: 500px;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+
+        .salvarBtn{
+            width: 230px;
+            height: 60px;  
+            border-radius: 7px;
+            border: none;   
+            background-color: #904efa;
+            color: #fff;
+            font-size: 30px;
+            font-weight: 600;
+
+        }
+        .cancelarBtn{
+            width: 230px;
+            height: 60px;
+            border-radius: 7px;
+            border: none;
+            background-color: #a6a6a6;
+            color: #fff;
+            font-size: 30px;
+            font-weight: 600;
+
+        }
+    }
+}

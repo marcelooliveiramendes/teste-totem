@@ -1,0 +1,27 @@
+.confirmacaoContainer{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+    p{
+        font-size: 26px;
+        margin-bottom: 50px;
+    }
+
+    .btnMenu{
+        width: 90%;
+        height: 90px;
+        border-radius: 7px;
+        background-color: #904efa;
+        border: none;
+        color: #FFF;
+        font-size: 26px;
+        font-weight: 600;
+        position: absolute;
+        bottom: 10px;
+    }
+}
