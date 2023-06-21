@@ -5,7 +5,7 @@ import './index.scss';
 import bgCayo from './img/cayo.png'
 import bgTaps from './img/taps.png'
 import bgErik from './img/erik.png'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Home } from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import Categorias from './pages/Categorias';
@@ -17,23 +17,43 @@ import { MinhasSolicitacoes } from './pages/MinhasSolicitacoes';
 const App = () => {
   // let timerId; // ID do temporizador
   const [count, setCount] = useState(1)
-  // document.querySelector("#telaEspera").style.display = 'none';
+  const [isActive, setIsActive] = useState(true);
 
-  // function funcaoSemClique() {
-  //   console.log("Você ficou muito tempo sem clicar!");
+  useEffect(() => {
+    let timeoutId;
 
-  //   document.querySelector("#telaEspera").style.display = 'block';
-  // }
+    const resetTimeout = () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
 
-  // function reiniciarTemporizador() {
-  //   clearTimeout(timerId); 
-  //   timerId = 
-  // }
+      timeoutId = setTimeout(() => {
+        setIsActive(true);
+      }, 20000); // 5000 milliseconds = 5 seconds
+    };
 
-  // window.addEventListener("click", reiniciarTemporizador);
-  // document.addEventListener("DOMContentLoaded", reiniciarTemporizador);
+    const handleUserActivity = () => {
+      console.log("TESTE");
+      setIsActive(false);
+      resetTimeout();
 
-  // document.querySelector(".container").addEventListener('click', () => {console.log('teste')})
+    };
+    
+    // Adicione os eventos de interação desejados aqui
+    window.addEventListener('mousemove', handleUserActivity);
+    window.addEventListener('keydown', handleUserActivity);
+    window.addEventListener('touchstart', handleUserActivity);
+    
+    resetTimeout();
+    
+    // Limpeza de eventos ao desmontar o componente
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('mousemove', handleUserActivity);
+      window.removeEventListener('keydown', handleUserActivity);
+      window.removeEventListener('touchstart', handleUserActivity);
+    };
+  }, []);
 
   setTimeout(() => {
     setCount(count + 1)
@@ -41,23 +61,28 @@ const App = () => {
     if(count === 3){
       setCount(1)
     }
-  }, 3000); 
+  }, 8000);
+  
 
   const hide = () => {
     document.querySelector(".container").style.display = 'none';
+    
   }
 
   return (
     <>
-      <div className='container' onClick={hide}>
-        {count === 1 && (<img src={bgCayo} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
-        {count === 2 && (<img src={bgTaps} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
-        {count === 3 && (<img src={bgErik} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
-        
-        <div className='containerText'>
-          <h2>Toque na tela para iniciar</h2>
+     {isActive ? (
+       <div className='container' onClick={hide}>
+            {count === 1 && (<img src={bgCayo} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
+            {count === 2 && (<img src={bgTaps} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
+            {count === 3 && (<img src={bgErik} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
+            <div className='containerText'>
+              <h2>Toque na tela para iniciar</h2>
+            </div>
         </div>
-      </div>
+  
+
+     ) : null}
 
       <BrowserRouter>
         <Routes>
