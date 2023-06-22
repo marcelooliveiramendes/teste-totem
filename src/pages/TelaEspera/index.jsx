@@ -29,9 +29,9 @@ export const TelaEspera = () => {
             {/* {count === 1 && (<img src={bgCayo} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
             {count === 2 && (<img src={bgTaps} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
             {count === 3 && (<img src={bgErik} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)} */}
+              <img src={festa} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />
             <div className='containerText'>
                 {/* <h2>Toque na tela para iniciar</h2> */}
-              <img src={festa} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />
             </div>
         </motion.div>
 
