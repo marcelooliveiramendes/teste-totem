@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
-// import bgCayo from '../../img/cayo.png'
-// import bgTaps from '../../img/taps.png'
-// import bgErik from '../../img/erik.png'
-import festa from '../../img/festa.png'
-// import logo from '../../img/logo.png'
+import bgCayo from '../../img/cayo.png'
+import bgTaps from '../../img/taps.png'
+import bgErik from '../../img/erik.png'
+import logo from '../../img/logo.png'
 import {motion} from 'framer-motion'
 
 export const TelaEspera = () => {
@@ -26,12 +25,13 @@ export const TelaEspera = () => {
         initial={{opacity: 0}}
         animate={{opacity: 1}}
         exit={{opacity: 0}}>
-            {/* {count === 1 && (<img src={bgCayo} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
+            {count === 1 && (<img src={bgCayo} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
             {count === 2 && (<img src={bgTaps} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
-            {count === 3 && (<img src={bgErik} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)} */}
-              <img src={festa} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />
+            {count === 3 && (<img src={bgErik} alt='' className='imageBackgrond'  cache-control="max-age=2592000" />)}
+
             <div className='containerText'>
-                {/* <h2>Toque na tela para iniciar</h2> */}
+                <h2>Toque na tela para iniciar</h2>
+                <img src={logo} alt="" srcset="" />
             </div>
         </motion.div>
 
